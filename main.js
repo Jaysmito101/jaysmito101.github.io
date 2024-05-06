@@ -57,7 +57,7 @@ function setPage(url) {
     if (url === '') {
         url = 'home';
     }
-    
+
     const page_data = document.querySelector(`#raw-data`).getElementsByClassName(url)[0];
     
     if (page_data) {
@@ -78,8 +78,6 @@ function setPage(url) {
 }
 
 function navigateTo(url) {
-
-
     if (url === '#/dark-mode') {
 
         const navButton = document.querySelector('.nav-button[data-url="#/dark-mode"]');
@@ -102,8 +100,7 @@ function navigateTo(url) {
         }
     });
 
-
-    if (url[0] === '#') {
+    if (url[0] === '#' || url == "") {
         window.history.replaceState({}, '', url);
         document.title = "Jaysmito // " + url.slice(2);
         setPage(url.slice(2));
